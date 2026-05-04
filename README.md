@@ -26,3 +26,6 @@ Helps identify students who need attention and improvement.
 - Web app integration
 - Better models
 - Visualization dashboard
+
+## 📌 Problem Statement
+Many students struggle academically and may fail without early identification. This project aims to detect such students in advance.
