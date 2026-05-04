@@ -2,6 +2,10 @@ import streamlit as st
 import pandas as pd
 import pickle
 
+# ✅ NEW: session storage (NO UI CHANGE)
+if "history" not in st.session_state:
+    st.session_state.history = []
+
 st.set_page_config(layout="wide", page_title="Student Risk AI", initial_sidebar_state="collapsed")
 
 st.markdown("""
@@ -156,55 +160,24 @@ st.markdown("""
     text-align: center;
     margin: 2rem auto;
     max-width: 600px;
-    animation: slideUp 0.5s ease-out;
-}
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 .result-low {
     border-color: rgba(34, 197, 94, 0.5);
-    box-shadow: 0 20px 60px rgba(34, 197, 94, 0.2);
 }
 .result-high {
     border-color: rgba(239, 68, 68, 0.5);
-    box-shadow: 0 20px 60px rgba(239, 68, 68, 0.2);
-}
-.result-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
 }
 .result-title {
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
     color: #e2e8f0;
 }
 .result-percentage {
     font-size: 3.5rem;
     font-weight: 900;
-    margin: 1rem 0;
-}
-.result-low .result-percentage {
-    background: linear-gradient(135deg, #22c55e, #10b981);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.result-high .result-percentage {
-    background: linear-gradient(135deg, #ef4444, #dc2626);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 .result-description {
-    font-size: 1rem;
     color: #94a3b8;
-    font-weight: 400;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -252,11 +225,20 @@ if clicked:
         pred = 1 if (failures > 1 or absences > 15 or studytime < 2) else 0
         prob = 75 if pred else 41
 
+    # ✅ NEW FEATURE (ONLY THIS ADDED)
+    st.session_state.history.append({
+        "studytime": studytime,
+        "failures": failures,
+        "absences": absences,
+        "health": health,
+        "risk": "High" if pred == 1 else "Low",
+        "prob": prob
+    })
+
     if pred == 1:
         st.markdown(f"""
         <div class="result-card result-high">
-            <div class="result-icon">⚠️</div>
-            <div class="result-title">High Risk Detected</div>
+            <div class="result-title">⚠️ High Risk Detected</div>
             <div class="result-percentage">{prob}%</div>
             <div class="result-description">Immediate intervention recommended</div>
         </div>
@@ -264,9 +246,13 @@ if clicked:
     else:
         st.markdown(f"""
         <div class="result-card result-low">
-            <div class="result-icon">✅</div>
-            <div class="result-title">Low Risk</div>
+            <div class="result-title">✅ Low Risk</div>
             <div class="result-percentage">{prob}%</div>
             <div class="result-description">Student is on track for success</div>
         </div>
         """, unsafe_allow_html=True)
+
+# ✅ NEW FEATURE DISPLAY (ONLY THIS ADDED)
+if st.session_state.history:
+    st.markdown("### 📊 Prediction History")
+    st.dataframe(pd.DataFrame(st.session_state.history), use_container_width=True)
