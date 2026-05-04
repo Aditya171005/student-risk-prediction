@@ -1,0 +1,8 @@
+studytime,failures,absences,health,risk,prob
+3,0,1,1,Low,20
+3,0,3,1,Low,21
+3,0,3,1,Low,21
+1,0,0,1,Low,20
+1,1,1,2,Low,41
+3,0,1,1,Low,20
+1,2,3,2,High,65
