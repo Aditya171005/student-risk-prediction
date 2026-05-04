@@ -66,7 +66,7 @@ with col1:
 
 with col2:
     if st.button("🏠 Home"):
-        st.switch_page("app.py")
+        st.switch_page("app")
 
 # ================= LOAD DATA =================
 df = load_history()

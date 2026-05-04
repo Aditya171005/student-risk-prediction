@@ -88,7 +88,7 @@ with col1:
 
 with col2:
     if st.button("📊 Dashboard"):
-        st.switch_page("pages/dashboard.py")
+        st.switch_page("dashboard")
 
 # ================= HERO =================
 st.markdown("""
