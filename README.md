@@ -29,3 +29,6 @@ Helps identify students who need attention and improvement.
 
 ## 📌 Problem Statement
 Many students struggle academically and may fail without early identification. This project aims to detect such students in advance.
+
+## 💡 Solution
+This project uses machine learning to predict whether a student is at risk based on their academic and personal data.
