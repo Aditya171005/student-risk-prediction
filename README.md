@@ -32,3 +32,8 @@ Many students struggle academically and may fail without early identification. T
 
 ## 💡 Solution
 This project uses machine learning to predict whether a student is at risk based on their academic and personal data.
+
+## 📂 Dataset
+- 395 students
+- 33 original features
+- Includes academic, social, and personal attributes
