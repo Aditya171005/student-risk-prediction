@@ -37,3 +37,11 @@ This project uses machine learning to predict whether a student is at risk based
 - 395 students
 - 33 original features
 - Includes academic, social, and personal attributes
+
+## 📊 Features Used
+- Study time
+- Absences
+- Parental education
+- Health
+- Previous grades
+- 
