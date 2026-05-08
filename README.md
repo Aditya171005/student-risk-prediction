@@ -1,3 +1,6 @@
+## 🌐 Live Demo
+https://your-app.streamlit.app
+
 ## 📅 Development Log
 
 ### Day 1
