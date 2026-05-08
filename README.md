@@ -1,5 +1,5 @@
 ## 🌐 Live Demo
-https://your-app.streamlit.app
+https://student-risk-prediction-dghcdx5fa6k89pd5gqw9fq.streamlit.app
 
 ## 📅 Development Log
 
