@@ -1,47 +1,23 @@
-# 🎓 Student Risk Prediction System
+## 📅 Development Log
 
-## 📌 Project Overview
-This project predicts whether a student is at risk of failing based on academic and personal data.
-
-## 🚀 Features
+### Day 1
+- Initial project setup
 - Data preprocessing and cleaning
-- Feature engineering
-- Logistic Regression model
-- 91% accuracy
-- Risk prediction with probability
 
-## 🧠 Tech Used
-- Python
-- Pandas
-- Scikit-learn
-- Google Colab
+### Day 2
+- Feature selection and engineering
+- Model training (Logistic Regression)
 
-## 📊 Model Performance
-- Accuracy: ~91%
+### Day 3
+- Achieved ~91% accuracy
+- Basic prediction logic implemented
 
-## 🎯 Use Case
-Helps identify students who need attention and improvement.
+### Day 4
+- Built Streamlit UI
+- Added input fields and prediction output
 
-## 🔮 Future Improvements
-- Web app integration
-- Better models
-- Visualization dashboard
-
-## 📌 Problem Statement
-Many students struggle academically and may fail without early identification. This project aims to detect such students in advance.
-
-## 💡 Solution
-This project uses machine learning to predict whether a student is at risk based on their academic and personal data.
-
-## 📂 Dataset
-- 395 students
-- 33 original features
-- Includes academic, social, and personal attributes
-
-## 📊 Features Used
-- Study time
-- Absences
-- Parental education
-- Health
-- Previous grades
-- 
+### Day 5
+- Improved UI consistency (buttons, spacing, layout)
+- Fixed dashboard card alignment issues
+- Structured insights section (Why / Recommendations)
+- Added better user experience with cleaner design
