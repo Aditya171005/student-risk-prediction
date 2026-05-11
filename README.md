@@ -24,3 +24,10 @@ https://student-risk-prediction-dghcdx5fa6k89pd5gqw9fq.streamlit.app
 - Fixed dashboard card alignment issues
 - Structured insights section (Why / Recommendations)
 - Added better user experience with cleaner design
+
+- ### Day 6
+- Improved dashboard visuals with summary cards
+- Fixed layout issues between cards and data table
+- Enhanced overall UI spacing and readability
+- Minor performance improvements
+
